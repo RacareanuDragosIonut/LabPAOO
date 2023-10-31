@@ -1,0 +1,3 @@
+/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles/build.dir
+/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles/edit_cache.dir
+/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles/rebuild_cache.dir
