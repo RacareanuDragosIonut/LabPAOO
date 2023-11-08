@@ -1,33 +1,52 @@
-// Account.hpp
 #ifndef ACCOUNT_HPP
 #define ACCOUNT_HPP
 #include <string>
-class Account {
-public:
-    // Constructor
-    Account(const std::string& accountNumber, double balance);
+#include <iostream>
+#include <memory>
+namespace BankingSystem {
+    class AccountBase {
+    public:
+        virtual ~AccountBase() = default;
+        virtual void deposit(double amount) = 0;
+        virtual void withdraw(double amount) = 0;
+        virtual void displayAccountInfo() const = 0;
+        virtual std::string getAccountNumber() = 0;
+    };
 
-    // Copy Constructor
-    Account(const Account& other);
+    class Account : public AccountBase {
+    public:
+        Account(const std::string& accountNumber, double balance);
+        Account(const Account& other);  // Copy constructor
+        Account(Account&& other) noexcept; // Move constructor
+        Account& operator=(Account&& other) noexcept;  // Move assignment operator
+        Account& operator=(const Account& other);
+        // override virtual functions
+        void deposit(double amount) override;
+        void withdraw(double amount) override;
+        void displayAccountInfo() const override;
+        std::string getAccountNumber() override;
+        double getBalance() const;
+        ~Account();
+    private:
+        std::string accountNumber;
+        //int* referenceCount;
+        //bool shouldDelete;
+    protected:
+        //double* balance;
+        std::unique_ptr<double> balance;
+    };
 
-    // Assignment Operator
-    Account& operator=(const Account& other);
+    class SavingsAccount : public Account {
+    public:
+        SavingsAccount(const std::string& accountNumber, double balance, double interestRate);
+        void addInterest(); 
+        std::string getAccountType() const;
+        void displayAccountInfo() const override;
 
-    // Destructor
-    ~Account();
-
-    // functii membrii publici
-    void deposit(double amount);
-    void withdraw(double amount);
-    void displayAccountInfo() const;
-    std::string getAccountNumber();
-
-private:
-    //membrii privati
-    std::string accountNumber; // numarul contului
-    double* balance; // Pointer la balance care va fi alocat dinamic
-    int* referenceCount; // Reference count pentru memorie share-uita
-    bool shouldDelete;   // Flag to determine if memory should be deleted
-};
+    private:
+        double interestRate;
+        std::string accountType;
+    };
+}
 
 #endif

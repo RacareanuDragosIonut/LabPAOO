@@ -2,11 +2,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+#include <memory>
+using namespace BankingSystem;
 int main() {
     // Lista de conturi, de tipul Account
     std::vector<Account> accounts;
-
     int numAccounts;
     std::cout << "Enter the number of accounts to create: ";
     std::cin >> numAccounts;
@@ -23,7 +23,8 @@ int main() {
         std::cin >> initialBalance;
 
         Account account(accountNumber, initialBalance);
-        accounts.push_back(account);
+       
+        accounts.push_back(std::move(account));
     }
 
     // Simularea initiala a unor tranzactii
@@ -61,7 +62,7 @@ int main() {
         accounts[0].displayAccountInfo();
         //verificam pentru obiectul din care s-a copiat si observam ca
         //schimbarile in membrul balance nu au impactat obiectul din care s-a copiat
-        std::cout << "\nCopying an existing account - Shallow Copy:" << std::endl;
+        //std::cout << "\nCopying an existing account - Shallow Copy:" << std::endl;
         Account copiedAccount2("113", 25);
         copiedAccount2 = accounts[1]; 
         // Folosim assignment operator pentru shallow copy
@@ -76,6 +77,16 @@ int main() {
         accounts[1].displayAccountInfo();
         //verificam pentru obiectul din care s-a copiat si observam ca
         //schimbarile in membrul balance au impactat obiectul din care s-a copiat
+    
     }
+
+  if (accounts.size() >= 1) {
+        std::cout << "\nSavings Account - Adding Interest:" << std::endl;
+        SavingsAccount savingsAccount("S123", 1000.0, 5.0); 
+        savingsAccount.displayAccountInfo();
+        savingsAccount.addInterest();
+        std::cout << "Account Type: " << savingsAccount.getAccountType() << std::endl;
+        savingsAccount.displayAccountInfo();
+  }
     return 0;
 }

@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
-project(MyProject)
+project(MyProject VERSION 0.1.0 LANGUAGES C CXX)
+include(CTest)
 
+include(CPack)
 
-add_executable(build src/main.cpp src/Account.cpp src/Account.hpp)
+enable_testing()
+
+add_subdirectory(src) 
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 
 

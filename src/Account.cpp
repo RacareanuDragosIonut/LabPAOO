@@ -1,51 +1,47 @@
 // Account.cpp
 #include "Account.hpp"
 #include <iostream>
-// ReferenceCount si shouldDelete sunt pentru a dealocarea din 
-//memorie a membrului privat balance
+#include <memory>
+namespace BankingSystem{
 // Constructor
-Account::Account(const std::string& accountNumber, double balance) : accountNumber(accountNumber) {
-    this->balance = new double(balance);
-    referenceCount = new int(1); // in constructor referenceCount se initializeaza cu 1
-    shouldDelete = true; // Set the flag to true (delete memory when the object is destroyed)
-}
+Account::Account(const std::string& accountNumber, double balance)
+    : accountNumber(accountNumber), balance(std::make_unique<double>(balance)) {}
 
 // Copy Constructor
-Account::Account(const Account& other) : accountNumber(other.accountNumber) {
-    this->balance = new double(*(other.balance));
-    this->referenceCount = other.referenceCount;
-    (*referenceCount)++; 
-    //Cand se creeaza un deep copy al obiectului, se incrementeaza count-ul de referinte
-    this->shouldDelete = other.shouldDelete;
-}
+Account::Account(const Account& other)
+    : accountNumber(other.accountNumber), balance(std::make_unique<double>(*other.balance)) {}
 
-// Assignment Operator
+// Move Constructor
+Account::Account(Account&& other) noexcept
+    : accountNumber(std::move(other.accountNumber)), balance(std::move(other.balance)) {
+        std::cout<<"move constructor";
+    }
+
+// Move Assignment Operator
+Account& Account::operator=(Account&& other) noexcept {
+    if (this == &other) {
+        return *this;
+    }
+
+    accountNumber = std::move(other.accountNumber);
+    balance = std::move(other.balance);
+
+    return *this;
+}
+// Copy Assignment Operator
 Account& Account::operator=(const Account& other) {
     if (this == &other) {
-        return *this;  // se verifica daca nu cumva este acelasi obiect
+        return *this; // Handle self-assignment
     }
 
     accountNumber = other.accountNumber;
-     (*referenceCount)--;
-    // se decrementeaza referenceCount si daca devine 0 se dealoca si balance si referenceCount
-    if (*referenceCount == 0 && shouldDelete) {
-        delete balance;
-        balance = nullptr;
-        delete referenceCount;
-        referenceCount = nullptr;
-    }
-    balance = other.balance;
-    referenceCount = other.referenceCount;
-    shouldDelete = other.shouldDelete;
-    
-    // apoi se incrementeaza pentru ca este shallow copy
-    (*referenceCount)++;
+    balance = std::make_unique<double>(*other.balance);
+
     return *this;
 }
-
 // Destructor
 Account::~Account() {
-    (*referenceCount)--;
+    /*(*referenceCount)--;
     // se decrementeaza referenceCount in destructor
     if (*referenceCount == 0 && shouldDelete) {
         delete balance;
@@ -53,6 +49,7 @@ Account::~Account() {
         delete referenceCount;
         referenceCount = nullptr;
     }
+    */
     //apoi doar daca devine 0 referenceCount se dealoca din memorie referenceCount si balance
     // trebuie sa se evite dealocarea in alta situatie
     // pentru a evita double free error
@@ -80,4 +77,29 @@ void Account::displayAccountInfo() const {
 // functie publica pentru a extrage numarul contului
 std::string Account::getAccountNumber(){
         return accountNumber;
+}
+
+double Account::getBalance() const {
+    return *balance;
+}
+
+// SavingsAccount methods
+SavingsAccount::SavingsAccount(const std::string& accountNumber, double balance, double interestRate)
+    : Account(accountNumber, balance), interestRate(interestRate), accountType("Savings Account") {
+}
+
+void SavingsAccount::addInterest() {
+    double currentBalance = getBalance();
+    currentBalance += currentBalance * (interestRate / 100.0);
+    *balance = currentBalance;
+}
+
+std::string SavingsAccount::getAccountType() const {
+    return accountType;
+}
+
+void SavingsAccount::displayAccountInfo() const {
+    Account::displayAccountInfo();
+    std::cout << "Account Type: " << accountType << std::endl;
+}
 }

@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/build.dir/src/main.cpp.o CMakeFiles/build.dir/src/Account.cpp.o -o build 
