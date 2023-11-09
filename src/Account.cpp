@@ -83,6 +83,9 @@ double Account::getBalance() const {
     return *balance;
 }
 
+void Account::setBalance(double newBalance) {
+    *balance = newBalance;
+}
 // SavingsAccount methods
 SavingsAccount::SavingsAccount(const std::string& accountNumber, double balance, double interestRate)
     : Account(accountNumber, balance), interestRate(interestRate), accountType("Savings Account") {
@@ -91,7 +94,8 @@ SavingsAccount::SavingsAccount(const std::string& accountNumber, double balance,
 void SavingsAccount::addInterest() {
     double currentBalance = getBalance();
     currentBalance += currentBalance * (interestRate / 100.0);
-    *balance = currentBalance;
+    //*balance = currentBalance;
+    setBalance(currentBalance);
 }
 
 std::string SavingsAccount::getAccountType() const {

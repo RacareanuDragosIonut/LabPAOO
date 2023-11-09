@@ -26,13 +26,10 @@ namespace BankingSystem {
         void displayAccountInfo() const override;
         std::string getAccountNumber() override;
         double getBalance() const;
+        void setBalance(double newBalance);
         ~Account();
     private:
         std::string accountNumber;
-        //int* referenceCount;
-        //bool shouldDelete;
-    protected:
-        //double* balance;
         std::unique_ptr<double> balance;
     };
 
