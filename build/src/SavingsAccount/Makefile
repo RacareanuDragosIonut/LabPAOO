@@ -146,44 +146,6 @@ depend:
 	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/rule:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/rule
-.PHONY : src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/rule
-
-# Convenience name for target.
-SavingsAccountLib: src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/rule
-.PHONY : SavingsAccountLib
-
-# fast build rule for target.
-SavingsAccountLib/fast:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/build.make src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/build
-.PHONY : SavingsAccountLib/fast
-
-SavingsAccount.o: SavingsAccount.cpp.o
-.PHONY : SavingsAccount.o
-
-# target to build an object file
-SavingsAccount.cpp.o:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/build.make src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/SavingsAccount.cpp.o
-.PHONY : SavingsAccount.cpp.o
-
-SavingsAccount.i: SavingsAccount.cpp.i
-.PHONY : SavingsAccount.i
-
-# target to preprocess a source file
-SavingsAccount.cpp.i:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/build.make src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/SavingsAccount.cpp.i
-.PHONY : SavingsAccount.cpp.i
-
-SavingsAccount.s: SavingsAccount.cpp.s
-.PHONY : SavingsAccount.s
-
-# target to generate assembly for a file
-SavingsAccount.cpp.s:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/build.make src/SavingsAccount/CMakeFiles/SavingsAccountLib.dir/SavingsAccount.cpp.s
-.PHONY : SavingsAccount.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -195,10 +157,6 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... SavingsAccountLib"
-	@echo "... SavingsAccount.o"
-	@echo "... SavingsAccount.i"
-	@echo "... SavingsAccount.s"
 .PHONY : help
 
 

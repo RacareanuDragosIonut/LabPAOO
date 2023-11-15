@@ -1,0 +1,2 @@
+add_library(SavingsAccount INTERFACE)
+target_include_directories(SavingsAccount INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

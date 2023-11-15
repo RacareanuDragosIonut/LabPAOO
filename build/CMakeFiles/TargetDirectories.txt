@@ -37,3 +37,13 @@
 /home/dragos/Documents/Lab Paoo teme/build/src/CMakeFiles/test.dir
 /home/dragos/Documents/Lab Paoo teme/build/src/CMakeFiles/edit_cache.dir
 /home/dragos/Documents/Lab Paoo teme/build/src/CMakeFiles/rebuild_cache.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/Account/CMakeFiles/package.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/Account/CMakeFiles/package_source.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/Account/CMakeFiles/test.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/Account/CMakeFiles/edit_cache.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/Account/CMakeFiles/rebuild_cache.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/SavingsAccount/CMakeFiles/package.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/SavingsAccount/CMakeFiles/package_source.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/SavingsAccount/CMakeFiles/test.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/SavingsAccount/CMakeFiles/edit_cache.dir
+/home/dragos/Documents/Lab Paoo teme/build/src/SavingsAccount/CMakeFiles/rebuild_cache.dir

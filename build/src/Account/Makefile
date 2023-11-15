@@ -146,20 +146,6 @@ depend:
 	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-src/Account/CMakeFiles/AccountLib.dir/rule:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/Account/CMakeFiles/AccountLib.dir/rule
-.PHONY : src/Account/CMakeFiles/AccountLib.dir/rule
-
-# Convenience name for target.
-AccountLib: src/Account/CMakeFiles/AccountLib.dir/rule
-.PHONY : AccountLib
-
-# fast build rule for target.
-AccountLib/fast:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/Account/CMakeFiles/AccountLib.dir/build.make src/Account/CMakeFiles/AccountLib.dir/build
-.PHONY : AccountLib/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -171,7 +157,6 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... AccountLib"
 .PHONY : help
 
 
