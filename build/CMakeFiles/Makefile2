@@ -107,7 +107,6 @@ clean: src/clean
 
 # Recursive "all" directory target.
 src/all: src/CMakeFiles/MyProject.dir/all
-src/all: src/CMakeFiles/AccountLib.dir/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -116,7 +115,6 @@ src/preinstall:
 
 # Recursive "clean" directory target.
 src/clean: src/CMakeFiles/MyProject.dir/clean
-src/clean: src/CMakeFiles/AccountLib.dir/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -851,15 +849,15 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 # Target rules for target src/CMakeFiles/MyProject.dir
 
 # All Build rule for target.
-src/CMakeFiles/MyProject.dir/all: src/CMakeFiles/AccountLib.dir/all
+src/CMakeFiles/MyProject.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MyProject.dir/build.make src/CMakeFiles/MyProject.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MyProject.dir/build.make src/CMakeFiles/MyProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles" --progress-num=3,4 "Built target MyProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles" --progress-num=1,2 "Built target MyProject"
 .PHONY : src/CMakeFiles/MyProject.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/MyProject.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/MyProject.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles" 0
 .PHONY : src/CMakeFiles/MyProject.dir/rule
@@ -872,32 +870,6 @@ MyProject: src/CMakeFiles/MyProject.dir/rule
 src/CMakeFiles/MyProject.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MyProject.dir/build.make src/CMakeFiles/MyProject.dir/clean
 .PHONY : src/CMakeFiles/MyProject.dir/clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/AccountLib.dir
-
-# All Build rule for target.
-src/CMakeFiles/AccountLib.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/AccountLib.dir/build.make src/CMakeFiles/AccountLib.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/AccountLib.dir/build.make src/CMakeFiles/AccountLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles" --progress-num=1,2 "Built target AccountLib"
-.PHONY : src/CMakeFiles/AccountLib.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/AccountLib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/AccountLib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles" 0
-.PHONY : src/CMakeFiles/AccountLib.dir/rule
-
-# Convenience name for target.
-AccountLib: src/CMakeFiles/AccountLib.dir/rule
-.PHONY : AccountLib
-
-# clean rule for target.
-src/CMakeFiles/AccountLib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/AccountLib.dir/build.make src/CMakeFiles/AccountLib.dir/clean
-.PHONY : src/CMakeFiles/AccountLib.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

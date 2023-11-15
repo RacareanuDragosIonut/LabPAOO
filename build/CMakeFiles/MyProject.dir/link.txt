@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/MyProject.dir/src/main.cpp.o CMakeFiles/MyProject.dir/src/TemplateInstantiations.cpp.o -o MyProject  src/Account/libAccountLib.a src/SavingsAccount/libSavingsAccountLib.a 

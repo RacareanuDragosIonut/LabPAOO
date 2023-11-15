@@ -92,7 +92,6 @@ MyProject_EXTERNAL_OBJECTS =
 
 src/MyProject: src/CMakeFiles/MyProject.dir/main.cpp.o
 src/MyProject: src/CMakeFiles/MyProject.dir/build.make
-src/MyProject: src/libAccountLib.a
 src/MyProject: src/CMakeFiles/MyProject.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/dragos/Documents/Lab Paoo teme/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable MyProject"
 	cd "/home/dragos/Documents/Lab Paoo teme/build/src" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyProject.dir/link.txt --verbose=$(VERBOSE)

@@ -1,7 +1,7 @@
 src/CMakeFiles/MyProject.dir/main.cpp.o: \
  /home/dragos/Documents/Lab\ Paoo\ teme/src/main.cpp \
  /usr/include/stdc-predef.h \
- /home/dragos/Documents/Lab\ Paoo\ teme/src/Account.hpp \
+ /home/dragos/Documents/Lab\ Paoo\ teme/src/./Account/Account.hpp \
  /usr/include/c++/12/string \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -171,4 +171,6 @@ src/CMakeFiles/MyProject.dir/main.cpp.o: \
  /usr/include/c++/12/pstl/execution_defs.h /usr/include/c++/12/vector \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
- /usr/include/c++/12/bits/vector.tcc
+ /usr/include/c++/12/bits/vector.tcc \
+ /home/dragos/Documents/Lab\ Paoo\ teme/src/./SavingsAccount/SavingsAccount.hpp \
+ /home/dragos/Documents/Lab\ Paoo\ teme/src/./SavingsAccount/../Account/Account.hpp

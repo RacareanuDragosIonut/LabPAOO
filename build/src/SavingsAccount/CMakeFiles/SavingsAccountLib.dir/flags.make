@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/dragos/Documents/Lab Paoo teme/src"
+CXX_INCLUDES = -I"/home/dragos/Documents/Lab Paoo teme/src/SavingsAccount"
 
 CXX_FLAGS = 
 

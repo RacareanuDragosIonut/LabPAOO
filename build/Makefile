@@ -523,19 +523,6 @@ MyProject/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MyProject.dir/build.make src/CMakeFiles/MyProject.dir/build
 .PHONY : MyProject/fast
 
-#=============================================================================
-# Target rules for targets named AccountLib
-
-# Build rule for target.
-AccountLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AccountLib
-.PHONY : AccountLib
-
-# fast build rule for target.
-AccountLib/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/AccountLib.dir/build.make src/CMakeFiles/AccountLib.dir/build
-.PHONY : AccountLib/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -575,7 +562,6 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
-	@echo "... AccountLib"
 	@echo "... MyProject"
 .PHONY : help
 

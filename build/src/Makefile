@@ -160,44 +160,6 @@ MyProject/fast:
 	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MyProject.dir/build.make src/CMakeFiles/MyProject.dir/build
 .PHONY : MyProject/fast
 
-# Convenience name for target.
-src/CMakeFiles/AccountLib.dir/rule:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/AccountLib.dir/rule
-.PHONY : src/CMakeFiles/AccountLib.dir/rule
-
-# Convenience name for target.
-AccountLib: src/CMakeFiles/AccountLib.dir/rule
-.PHONY : AccountLib
-
-# fast build rule for target.
-AccountLib/fast:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/AccountLib.dir/build.make src/CMakeFiles/AccountLib.dir/build
-.PHONY : AccountLib/fast
-
-Account.o: Account.cpp.o
-.PHONY : Account.o
-
-# target to build an object file
-Account.cpp.o:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/AccountLib.dir/build.make src/CMakeFiles/AccountLib.dir/Account.cpp.o
-.PHONY : Account.cpp.o
-
-Account.i: Account.cpp.i
-.PHONY : Account.i
-
-# target to preprocess a source file
-Account.cpp.i:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/AccountLib.dir/build.make src/CMakeFiles/AccountLib.dir/Account.cpp.i
-.PHONY : Account.cpp.i
-
-Account.s: Account.cpp.s
-.PHONY : Account.s
-
-# target to generate assembly for a file
-Account.cpp.s:
-	cd "/home/dragos/Documents/Lab Paoo teme/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/AccountLib.dir/build.make src/CMakeFiles/AccountLib.dir/Account.cpp.s
-.PHONY : Account.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -233,11 +195,7 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... AccountLib"
 	@echo "... MyProject"
-	@echo "... Account.o"
-	@echo "... Account.i"
-	@echo "... Account.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

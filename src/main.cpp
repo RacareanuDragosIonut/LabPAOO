@@ -1,12 +1,14 @@
-#include "Account.hpp"
+#include "./Account/Account.hpp"
+#include "./SavingsAccount/SavingsAccount.hpp"
 #include <iostream>
 #include <vector>
 #include <string>
 #include <memory>
 using namespace BankingSystem;
+
 int main() {
-    // Lista de conturi, de tipul Account
-    std::vector<Account> accounts;
+    // vector de conturi, de tipul Account
+    std::vector<Account<double>> accounts;
     int numAccounts;
     std::cout << "Enter the number of accounts to create: ";
     std::cin >> numAccounts;
@@ -22,71 +24,67 @@ int main() {
         std::cout << "Enter Initial Balance for Account " << i + 1 << ": $";
         std::cin >> initialBalance;
 
-        Account account(accountNumber, initialBalance);
-       
+        Account <double> account(accountNumber, initialBalance);
+
         accounts.push_back(std::move(account));
     }
 
-    // Simularea initiala a unor tranzactii
-    for (Account& account : accounts) {
+    // Simulation of initial transactions
+    for (Account<double> &account : accounts) {
         double amount;
         std::cout << "Enter the deposit amount for " << account.getAccountNumber() << ": $";
         std::cin >> amount;
         account.deposit(amount);
+        account.addTransaction("Deposit", amount);
 
         std::cout << "Enter the withdrawal amount for " << account.getAccountNumber() << ": $";
         std::cin >> amount;
         account.withdraw(amount);
+        account.addTransaction("Withdrawal", amount);
     }
 
-    // Afisarea informatiilor despre cont
+    // Display account information and transactions
     std::cout << "\nAccount Information:" << std::endl;
-    for (const Account& account : accounts) {
+    for (Account<double> & account : accounts) {
         account.displayAccountInfo();
+        account.displayTransactions();
     }
 
     // Copy Constructor si assignment operator
     if (accounts.size() >= 2) {
         std::cout << "\nCopying an existing account - Deep Copy:" << std::endl;
-        Account copiedAccount1(accounts[0]); 
-        // Folosesc copy constructor pentru a crea un deep copy
+        Account<double> copiedAccount1(accounts[0]); 
         copiedAccount1.displayAccountInfo();
-        //afisam initial informatiile contului - deep copy
-
+        
         double depositAmount1;
         std::cout << "\nEnter the deposit amount for the copied account: $";
         std::cin >> depositAmount1;
         copiedAccount1.deposit(depositAmount1);
-        // depozitam in cont
+        
         std::cout << "\nOriginal Account Information:" << std::endl;
         accounts[0].displayAccountInfo();
-        //verificam pentru obiectul din care s-a copiat si observam ca
-        //schimbarile in membrul balance nu au impactat obiectul din care s-a copiat
-        //std::cout << "\nCopying an existing account - Shallow Copy:" << std::endl;
-        Account copiedAccount2("113", 25);
-        copiedAccount2 = accounts[1]; 
-        // Folosim assignment operator pentru shallow copy
+        
+        std::cout << "\nCopying an existing account - Shallow Copy:" << std::endl;
+        Account<double> copiedAccount2 = accounts[1];
         copiedAccount2.displayAccountInfo();
-        // afisam initial informatiile contului-shallow copy
+        
         double depositAmount2;
         std::cout << "\nEnter the deposit amount for the copied account: $";
         std::cin >> depositAmount2;
         copiedAccount2.deposit(depositAmount2);
-        //depozitam in cont
+        
         std::cout << "\nOriginal Account Information:" << std::endl;
         accounts[1].displayAccountInfo();
-        //verificam pentru obiectul din care s-a copiat si observam ca
-        //schimbarile in membrul balance au impactat obiectul din care s-a copiat
-    
     }
 
-  if (accounts.size() >= 1) {
+    if (accounts.size() >= 1) {
         std::cout << "\nSavings Account - Adding Interest:" << std::endl;
         SavingsAccount savingsAccount("S123", 1000.0, 5.0); 
         savingsAccount.displayAccountInfo();
         savingsAccount.addInterest();
         std::cout << "Account Type: " << savingsAccount.getAccountType() << std::endl;
         savingsAccount.displayAccountInfo();
-  }
+    }
+
     return 0;
 }

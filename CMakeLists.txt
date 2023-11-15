@@ -6,9 +6,7 @@ include(CPack)
 
 enable_testing()
 
-add_subdirectory(src) 
+add_subdirectory(src)
 
 set(CMAKE_CXX_STANDARD 11)
-
-
 

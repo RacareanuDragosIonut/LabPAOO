@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSavingsAccountLib.a CMakeFiles/SavingsAccountLib.dir/SavingsAccount.cpp.o
+/usr/bin/ranlib libSavingsAccountLib.a

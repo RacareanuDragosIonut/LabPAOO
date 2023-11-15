@@ -32,7 +32,6 @@
 /home/dragos/Documents/Lab Paoo teme/build/CMakeFiles/edit_cache.dir
 /home/dragos/Documents/Lab Paoo teme/build/CMakeFiles/rebuild_cache.dir
 /home/dragos/Documents/Lab Paoo teme/build/src/CMakeFiles/MyProject.dir
-/home/dragos/Documents/Lab Paoo teme/build/src/CMakeFiles/AccountLib.dir
 /home/dragos/Documents/Lab Paoo teme/build/src/CMakeFiles/package.dir
 /home/dragos/Documents/Lab Paoo teme/build/src/CMakeFiles/package_source.dir
 /home/dragos/Documents/Lab Paoo teme/build/src/CMakeFiles/test.dir
